@@ -3,7 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Article } from "@/types/article";
 import { formatDate } from "@/lib/utils";
-import { ChevronRight, Calendar, Clock, RefreshCw } from "lucide-react";
+import { siteConfig } from "@/lib/config";
+import { ChevronRight, Calendar, Clock, RefreshCw, User, ShieldCheck } from "lucide-react";
 
 interface ArticleHeaderProps {
   article: Article;
@@ -47,10 +48,14 @@ export function ArticleHeader({ article }: ArticleHeaderProps) {
         </ol>
       </nav>
 
-      {/* Category Tag */}
-      <div className="inline-block">
+      {/* Category Tag & Peer-reviewed badge */}
+      <div className="flex items-center gap-3">
         <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
           {article.category}
+        </span>
+        <span className="inline-flex items-center space-x-1 text-[11px] font-semibold text-gray-600 bg-gray-100 px-2.5 py-0.5 rounded-md">
+          <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
+          <span>Technical Review</span>
         </span>
       </div>
 
@@ -66,8 +71,23 @@ export function ArticleHeader({ article }: ArticleHeaderProps) {
         </p>
       )}
 
-      {/* Publishing Metadata Row */}
+      {/* Publishing & Author Metadata Row */}
       <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500 py-3 border-y border-gray-200">
+        <div className="flex items-center space-x-1.5">
+          <User className="w-4 h-4 text-gray-400" />
+          <span>
+            By{" "}
+            <Link
+              href="/about"
+              className="font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+            >
+              {siteConfig.author.name}
+            </Link>
+          </span>
+        </div>
+
+        <span className="text-gray-300">•</span>
+
         <div className="flex items-center space-x-1.5">
           <Calendar className="w-4 h-4 text-gray-400" />
           <span>Published {formatDate(article.publishedAt)}</span>
@@ -90,15 +110,15 @@ export function ArticleHeader({ article }: ArticleHeaderProps) {
         </div>
       </div>
 
-      {/* Featured Image - LCP with fetchpriority="high" */}
+      {/* Featured Image - Capped max size & LCP Priority */}
       {article.featuredImage && (
-        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-gray-100 border border-gray-200 mt-6">
+        <div className="relative aspect-[16/9] w-full max-w-3xl overflow-hidden rounded-xl bg-gray-100 border border-gray-200 mt-6">
           <Image
             src={article.featuredImage}
             alt={article.title}
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 800px"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 768px, 768px"
             className="object-cover"
           />
         </div>

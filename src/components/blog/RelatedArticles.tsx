@@ -51,7 +51,7 @@ export function RelatedArticles({ articles }: RelatedArticlesProps) {
                   src={article.featuredImage}
                   alt={article.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 280px"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </Link>

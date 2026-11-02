@@ -40,7 +40,7 @@ export function Footer() {
           {/* Quick Navigation */}
           <div className="md:col-span-3 space-y-3">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-900">
-              Navigation
+              Publication
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -61,10 +61,26 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#topics"
+                  href="/about"
                   className="hover:text-blue-600 transition-colors"
                 >
-                  Editorial Topics
+                  About Modernwebbuild
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/editorial-policy"
+                  className="hover:text-blue-600 transition-colors"
+                >
+                  Editorial Policy &amp; Standards
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="hover:text-blue-600 transition-colors"
+                >
+                  Privacy Policy
                 </Link>
               </li>
               <li>
@@ -72,7 +88,7 @@ export function Footer() {
                   href="/contact"
                   className="hover:text-blue-600 transition-colors"
                 >
-                  Contact Editorial
+                  Contact Editorial Desk
                 </Link>
               </li>
             </ul>
@@ -96,12 +112,22 @@ export function Footer() {
         {/* Bottom Legal & Colophon */}
         <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
           <p>© {currentYear} {siteConfig.name}. All rights reserved.</p>
-          <div className="flex items-center space-x-6 mt-4 sm:mt-0">
-            <Link href="/contact" className="hover:text-gray-900 transition-colors">
-              Editorial Inquiries
+          <div className="flex items-center space-x-4 sm:space-x-6 mt-4 sm:mt-0">
+            <Link href="/about" className="hover:text-gray-900 transition-colors">
+              About
             </Link>
             <span>•</span>
-            <span>Independent Digital Magazine</span>
+            <Link href="/editorial-policy" className="hover:text-gray-900 transition-colors">
+              Editorial Standards
+            </Link>
+            <span>•</span>
+            <Link href="/privacy-policy" className="hover:text-gray-900 transition-colors">
+              Privacy Policy
+            </Link>
+            <span>•</span>
+            <Link href="/contact" className="hover:text-gray-900 transition-colors">
+              Contact Desk
+            </Link>
           </div>
         </div>
       </div>

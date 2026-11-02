@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/config";
 import { ArticleHeader } from "@/components/blog/ArticleHeader";
 import { ArticleBody } from "@/components/blog/ArticleBody";
 import { TableOfContents } from "@/components/blog/TableOfContents";
+import { AuthorBio } from "@/components/blog/AuthorBio";
 import { RelatedArticles } from "@/components/blog/RelatedArticles";
 
 interface PageProps {
@@ -37,6 +38,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: article.title,
     description: article.description,
+    authors: [{ name: siteConfig.author.name, url: `${siteConfig.domain}/about` }],
+    creator: siteConfig.author.name,
+    publisher: siteConfig.name,
     alternates: {
       canonical: url,
     },
@@ -48,7 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: siteConfig.name,
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
-      authors: [`${siteConfig.name} Editorial Staff`],
+      authors: [siteConfig.author.name],
       section: article.category,
       tags: article.tags,
       images: [
@@ -79,7 +83,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
   const relatedArticles = getRelatedArticles(article.slug, article.category, 3);
 
-  // Structured JSON-LD Data (Article Schema + Breadcrumbs + optional FAQ)
+  // Structured JSON-LD Data (Article Schema with named Person author + Breadcrumbs + FAQPage)
   const schemaGraph: Record<string, unknown>[] = [
     {
       "@type": "Article",
@@ -96,10 +100,20 @@ export default async function ArticlePage({ params }: PageProps) {
         "@id": `${siteConfig.domain}/blog/${article.slug}`,
       },
       wordCount: article.wordCount,
+      author: {
+        "@type": "Person",
+        name: siteConfig.author.name,
+        jobTitle: siteConfig.author.role,
+        url: `${siteConfig.domain}/about`,
+      },
       publisher: {
         "@type": "Organization",
         name: siteConfig.name,
         url: siteConfig.domain,
+        logo: {
+          "@type": "ImageObject",
+          url: `${siteConfig.domain}${siteConfig.logo}`,
+        },
       },
       image: {
         "@type": "ImageObject",
@@ -171,6 +185,9 @@ export default async function ArticlePage({ params }: PageProps) {
 
         {/* Complete, distraction-free article body */}
         <ArticleBody content={article.content} faqs={article.faqs} />
+
+        {/* Verified Author Bio & Editorial Review Card */}
+        <AuthorBio />
 
         {/* Editorial Related Articles */}
         <RelatedArticles articles={relatedArticles} />

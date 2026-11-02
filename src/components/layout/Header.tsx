@@ -58,7 +58,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-7">
             <Link
               href="/"
               className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 rounded px-1"
@@ -76,6 +76,12 @@ export function Header() {
               className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 rounded px-1"
             >
               Topics
+            </Link>
+            <Link
+              href="/about"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 rounded px-1"
+            >
+              About
             </Link>
             <Link
               href="/contact"

@@ -92,6 +92,20 @@ export function MobileNavigation({
             Topics
           </Link>
           <Link
+            href="/about"
+            onClick={onClose}
+            className="text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors py-2"
+          >
+            About
+          </Link>
+          <Link
+            href="/editorial-policy"
+            onClick={onClose}
+            className="text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors py-2"
+          >
+            Editorial Policy
+          </Link>
+          <Link
             href="/contact"
             onClick={onClose}
             className="text-2xl font-medium text-gray-900 hover:text-blue-600 transition-colors py-2"

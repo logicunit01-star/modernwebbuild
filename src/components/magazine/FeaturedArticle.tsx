@@ -24,7 +24,7 @@ export function FeaturedArticle({ article }: FeaturedArticleProps) {
               alt={article.title}
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 58vw"
+              sizes="(max-width: 1024px) 100vw, 720px"
               className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
             />
           </Link>
