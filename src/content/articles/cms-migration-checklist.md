@@ -12,61 +12,23 @@ tags: ["Headless & CMS"]
 faqs: [{"question":"1. How long does a CMS migration take? ","answer":"It depends on site size, but most migrations take <strong>2 to 8 weeks</strong>, including planning, execution, and monitoring. "},{"question":"2. Will I lose traffic after migration? ","answer":"A small temporary drop is normal. With proper SEO migration strategy, traffic usually <strong>recovers within weeks</strong>. "},{"question":"3. What is the biggest risk in website migration? ","answer":"The biggest risk is <strong>incorrect or missing redirects</strong>, which can lead to lost rankings and broken pages. "},{"question":"4. Should I migrate to improve SEO? ","answer":"Yes—if your current CMS limits performance, speed, or scalability, migration can significantly improve SEO. "},{"question":"5. Do I need an SEO expert for migration? ","answer":"If your website generates traffic or revenue, working with an expert reduces risk and ensures long-term growth. "}]
 ---
 
-
 		
 		
-
-
-
 
 <h2 class="wp-block-heading" id="final-thoughts">Final Thoughts&nbsp;</h2>
 
-
-
 <p class="wp-block-paragraph">A CMS migration&nbsp;isn’t&nbsp;just a technical task, it’s&nbsp;an&nbsp;SEO-critical operation.&nbsp;</p>
 
-
-
 <p class="wp-block-paragraph">Done right, it can:&nbsp;</p>
-
-
 
 <ul class="wp-block-list">
 <li>Improve rankings&nbsp;</li>
 
-
-
 <li>Boost conversions&nbsp;</li>
-
-
 
 <li>Enhance performance&nbsp;</li>
 </ul>
 
-
-
 <p class="wp-block-paragraph">Done&nbsp;wrong,&nbsp;it can wipe out years of growth.&nbsp;</p>
 
-
-
 <div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Further Reading:</strong> See our editorial guide on <a href="/blog/how-to-plan-a-website-rebuild">How to Plan a Website Rebuild</a>.</div>
-
-
-
-<div class="wp-block-columns has-pale-ocean-gradient-background has-background is-layout-flex wp-container-core-columns-is-layout-7387b849 wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-<h3 class="wp-block-heading has-text-align-center has-ast-global-color-8-color has-text-color has-link-color wp-elements-20">Planning a CMS migration?&nbsp;</h3>
-
-
-
-<p class="has-text-align-center alignwide wp-block-paragraph">👉&nbsp;I’ll&nbsp;help you migrate your website&nbsp;<strong>without losing traffic or rankings</strong>&nbsp;<br>✔&nbsp;Full SEO migration strategy&nbsp;✔&nbsp;Technical implementation&nbsp;✔&nbsp;Post-migration&nbsp;recovery plan</p>
-
-
-
-
-</div>
-</div>
-
-		
-		
-			
