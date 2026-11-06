@@ -33,6 +33,12 @@ export function ContactForm() {
     return Object.keys(errors).length === 0;
   };
 
+  const getHubspotCookie = (): string | undefined => {
+    if (typeof document === "undefined") return undefined;
+    const match = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+    return match ? match[1] : undefined;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
@@ -41,10 +47,11 @@ export function ContactForm() {
     setFeedback("");
 
     try {
+      const hutk = getHubspotCookie();
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, hutk }),
       });
 
       const data = await res.json();
@@ -65,7 +72,16 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+    <form
+      id="modernwebbuild-contact-form"
+      name="modernwebbuild-contact-form"
+      method="POST"
+      onSubmit={handleSubmit}
+      className="space-y-6"
+      noValidate
+    >
+      <input type="hidden" name="form_name" value="Modernwebbuild Contact Form" />
+      <input type="hidden" name="website" value="modernwebbuild.com" />
       {/* Feedback Alert */}
       {status === "success" && (
         <div

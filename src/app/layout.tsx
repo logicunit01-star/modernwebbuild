@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -91,6 +92,15 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+
+        {/* HubSpot Tracking & Non-HubSpot Form Lead Capture */}
+        {siteConfig.hubspotPortalId && (
+          <Script
+            id="hs-script-loader"
+            strategy="afterInteractive"
+            src={`//js-na2.hs-scripts.com/${siteConfig.hubspotPortalId}.js`}
+          />
+        )}
       </body>
     </html>
   );

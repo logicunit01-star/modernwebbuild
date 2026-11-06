@@ -13,6 +13,7 @@ export interface SiteConfig {
   navItems: { label: string; href: string }[];
   categories: string[];
   contactEmail: string;
+  hubspotPortalId: string;
 }
 
 export const siteConfig: SiteConfig = {
@@ -44,4 +45,5 @@ export const siteConfig: SiteConfig = {
     "Business & Strategy",
   ],
   contactEmail: "editor@modernwebbuild.com",
+  hubspotPortalId: process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID || "246175508",
 };
