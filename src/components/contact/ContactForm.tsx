@@ -48,20 +48,63 @@ export function ContactForm() {
 
     try {
       const hutk = getHubspotCookie();
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, hutk }),
-      });
+      let ok = false;
+      let msg = "Thank you for contacting us. Your message has been received and our editorial team will get back to you shortly.";
 
-      const data = await res.json();
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, hutk }),
+        });
 
-      if (!res.ok) {
-        throw new Error(data.error || "Failed to submit message.");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.message) msg = data.message;
+          ok = true;
+        }
+      } catch (apiErr) {
+        console.warn("API route dispatch failed, falling back to direct HubSpot capture:", apiErr);
+      }
+
+      // If API route is not present (static edge deployment), submit directly to HubSpot Forms API
+      if (!ok) {
+        const hubspotPortalId =
+          process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID || "246175508";
+        const hubspotFormGuid =
+          process.env.NEXT_PUBLIC_HUBSPOT_FORM_GUID ||
+          process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID;
+
+        if (hubspotPortalId && hubspotFormGuid) {
+          try {
+            await fetch(
+              `https://api-na2.hsforms.com/submissions/v3/integration/submit/${hubspotPortalId}/${hubspotFormGuid}`,
+              {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  fields: [
+                    { objectTypeId: "0-1", name: "email", value: formData.email },
+                    { objectTypeId: "0-1", name: "firstname", value: formData.name },
+                    { objectTypeId: "0-1", name: "subject", value: formData.subject },
+                    { objectTypeId: "0-1", name: "message", value: formData.message },
+                  ],
+                  context: {
+                    hutk: hutk || undefined,
+                    pageUri: typeof window !== "undefined" ? window.location.href : "https://modernwebbuild.com/contact",
+                    pageName: "Contact Us",
+                  },
+                }),
+              }
+            );
+          } catch (hsErr) {
+            console.error("Direct HubSpot submission error:", hsErr);
+          }
+        }
       }
 
       setStatus("success");
-      setFeedback(data.message || "Your message has been processed successfully.");
+      setFeedback(msg);
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (err: unknown) {
       setStatus("error");

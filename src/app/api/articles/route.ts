@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getAllArticles } from "@/lib/articles";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const articles = getAllArticles();
   const metadataList = articles.map((article) => ({
