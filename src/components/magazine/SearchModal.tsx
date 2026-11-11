@@ -21,15 +21,26 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
       inputRef.current?.focus();
       document.body.style.overflow = "hidden";
 
-      // Load article index
+      // Load article index (static JSON first for CDN/Cloudflare, fallback to API)
       setIsLoading(true);
-      fetch("/api/articles")
-        .then((res) => res.json())
+      fetch("/data/articles.json")
+        .then((res) => {
+          if (!res.ok) return fetch("/api/articles").then((r) => r.json());
+          return res.json();
+        })
         .then((data) => {
           setArticles(data);
           setIsLoading(false);
         })
-        .catch(() => setIsLoading(false));
+        .catch(() => {
+          fetch("/api/articles")
+            .then((r) => r.json())
+            .then((data) => {
+              setArticles(data);
+              setIsLoading(false);
+            })
+            .catch(() => setIsLoading(false));
+        });
     } else {
       document.body.style.overflow = "";
       setQuery("");

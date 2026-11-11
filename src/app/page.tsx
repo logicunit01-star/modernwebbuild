@@ -7,6 +7,8 @@ import { LatestArticles } from "@/components/magazine/LatestArticles";
 import { EditorialSections } from "@/components/magazine/EditorialSections";
 import { ArrowRight, Code2 } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export default function HomePage() {
   const allArticles = getAllArticles();
   const categories = getAllCategories();

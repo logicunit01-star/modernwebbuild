@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { Article } from "@/types/article";
+import bundledArticles from "./articles-data.json";
 
 const articlesDirectory = path.join(process.cwd(), "src", "content", "articles");
 
@@ -12,45 +13,58 @@ export function getAllArticles(): Article[] {
     return cachedArticles;
   }
 
-  if (!fs.existsSync(articlesDirectory)) {
-    return [];
+  // 1. Try reading directly from filesystem if available (Node.js runtime, local development)
+  try {
+    if (
+      typeof fs !== "undefined" &&
+      typeof fs.existsSync === "function" &&
+      fs.existsSync(articlesDirectory)
+    ) {
+      const fileNames = fs.readdirSync(articlesDirectory);
+      if (fileNames.length > 0) {
+        const allArticles: Article[] = [];
+
+        for (const fileName of fileNames) {
+          if (!fileName.endsWith(".md")) continue;
+
+          const fullPath = path.join(articlesDirectory, fileName);
+          const fileContents = fs.readFileSync(fullPath, "utf8");
+          const { data, content } = matter(fileContents);
+
+          const slug = data.slug || fileName.replace(/\.md$/, "");
+
+          allArticles.push({
+            slug,
+            title: data.title || "Untitled Article",
+            description: data.description || "",
+            publishedAt: data.publishedAt || new Date().toISOString(),
+            updatedAt: data.updatedAt || data.publishedAt || new Date().toISOString(),
+            category: data.category || "Web Architecture",
+            tags: data.tags || [data.category || "Web Architecture"],
+            featuredImage: data.featuredImage || "/images/placeholder.svg",
+            readingTime: data.readingTime || "5 min read",
+            wordCount: data.wordCount || 800,
+            faqs: data.faqs || [],
+            content,
+          });
+        }
+
+        // Sort by publication date descending
+        allArticles.sort((a, b) => {
+          return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+        });
+
+        cachedArticles = allArticles;
+        return allArticles;
+      }
+    }
+  } catch {
+    // Cloudflare Edge Workers runtime where Node.js filesystem is sandboxed or unavailable
   }
 
-  const fileNames = fs.readdirSync(articlesDirectory);
-  const allArticles: Article[] = [];
-
-  for (const fileName of fileNames) {
-    if (!fileName.endsWith(".md")) continue;
-
-    const fullPath = path.join(articlesDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data, content } = matter(fileContents);
-
-    const slug = data.slug || fileName.replace(/\.md$/, "");
-
-    allArticles.push({
-      slug,
-      title: data.title || "Untitled Article",
-      description: data.description || "",
-      publishedAt: data.publishedAt || new Date().toISOString(),
-      updatedAt: data.updatedAt || data.publishedAt || new Date().toISOString(),
-      category: data.category || "Web Architecture",
-      tags: data.tags || [data.category || "Web Architecture"],
-      featuredImage: data.featuredImage || "/images/placeholder.svg",
-      readingTime: data.readingTime || "5 min read",
-      wordCount: data.wordCount || 800,
-      faqs: data.faqs || [],
-      content,
-    });
-  }
-
-  // Sort by publication date descending
-  allArticles.sort((a, b) => {
-    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
-  });
-
-  cachedArticles = allArticles;
-  return allArticles;
+  // 2. Fallback to pre-bundled dataset (guaranteed 100% available in memory on Cloudflare Pages)
+  cachedArticles = bundledArticles as Article[];
+  return cachedArticles;
 }
 
 export function getArticleBySlug(slug: string): Article | null {
