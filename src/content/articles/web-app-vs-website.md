@@ -55,3 +55,5 @@ faqs: [{"question":"Is a web app better than a website? ","answer":"It depends 
 
 <li>a scalable web app for user experience and retention&nbsp;&nbsp;</li>
 </ul>
+
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Performance Engineering:</strong> Whether building a content website or an interactive web application, achieving optimal speed and interactivity is critical for retention. Read our complete walkthrough on <a href="/blog/core-web-vitals-nextjs-optimization" class="text-blue-600 font-medium hover:underline">Core Web Vitals for Next.js: Practical Optimization Guide</a>.</div>

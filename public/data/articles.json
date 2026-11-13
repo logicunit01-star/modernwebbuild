@@ -1,5 +1,48 @@
 [
   {
+    "slug": "core-web-vitals-nextjs-optimization",
+    "title": "Core Web Vitals for Next.js: A Practical Optimization Guide",
+    "description": "Learn how to improve Core Web Vitals in Next.js with practical fixes for LCP, INP, and CLS, plus measurement tools and a production checklist.",
+    "publishedAt": "2026-11-13T12:00:00+00:00",
+    "updatedAt": "2026-11-13T12:00:00+00:00",
+    "category": "Web Architecture",
+    "tags": [
+      "Next.js",
+      "Performance",
+      "Core Web Vitals",
+      "Web Architecture"
+    ],
+    "featuredImage": "/images/articles/core-web-vitals-nextjs-optimization/featured.webp",
+    "readingTime": "12 min read",
+    "wordCount": 2350,
+    "faqs": [
+      {
+        "question": "What Are Good Core Web Vitals Scores for Next.js?",
+        "answer": "Aim for LCP of 2.5 seconds or less, INP of 200 milliseconds or less, and CLS of 0.1 or less at the 75th percentile of real user visits. These targets apply equally across mobile and desktop environments."
+      },
+      {
+        "question": "Does Next.js Automatically Improve Core Web Vitals?",
+        "answer": "No. While Next.js provides built-in performance primitives such as next/image, next/font, server components, and automatic route splitting, developers must still correctly configure image priority, avoid heavy client-side bundles, prevent layout shifts, and eliminate main-thread blocking tasks."
+      },
+      {
+        "question": "Is Server-Side Rendering Better for Core Web Vitals?",
+        "answer": "Not universally. Server-Side Rendering (SSR) delivers meaningful HTML quickly, but slow backend database queries or heavy external API calls will inflate Time to First Byte (TTFB), hurting LCP. For content that does not vary per user request, Static Site Generation (SSG) or cached Incremental Static Regeneration (ISR) offers superior performance."
+      },
+      {
+        "question": "Does a High Lighthouse Score Guarantee Good Google Rankings?",
+        "answer": "No. Lighthouse is a synthetic lab diagnostic tool. Google's search algorithms evaluate real-world field telemetry collected via the Chrome User Experience Report (CrUX) at the 75th percentile. Furthermore, Core Web Vitals represent one facet of overall page experience alongside content helpfulness, topical authority, and search intent."
+      },
+      {
+        "question": "How Often Should I Check Core Web Vitals?",
+        "answer": "Audit performance continuously during development and after every major release, library upgrade, or layout redesign. Monitor rolling 28-day field telemetry in Google Search Console's Core Web Vitals report to catch subtle regressions early."
+      },
+      {
+        "question": "Which Core Web Vital Should I Fix First?",
+        "answer": "Prioritize the metric causing the highest failure rate across your most critical commercial templates. If visitors wait too long for above-the-fold content, target LCP. If user interactions like menu toggles or checkout buttons feel sluggish, focus on INP. If elements jump unexpectedly during render, resolve CLS."
+      }
+    ]
+  },
+  {
     "slug": "build-website-with-ai-codex-vercel",
     "title": "Developer Guide: Building and Deploying Web Apps with OpenAI Codex, GitHub & Vercel",
     "description": "Technical workflow for developers: generating production code with OpenAI Codex, managing repositories in GitHub, and configuring CI/CD edge deployment on Vercel.",
