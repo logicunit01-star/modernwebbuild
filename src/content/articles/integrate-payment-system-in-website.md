@@ -37,6 +37,8 @@ faqs: [{"question":"How do I integrate a payment system into my website?","answe
 
 <p class="wp-block-paragraph">Selecting the right payment provider depends on your business model (e.g., one-time digital goods vs. recurring SaaS subscriptions), developer resources, and geographic customer base.</p>
 
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Unit Economics Insight:</strong> Processing interchange fees and dunning systems directly impact software delivery margins. Learn how payment delivery costs influence profitability in our guide on <a href="/blog/saas-unit-economics" class="text-blue-600 font-medium hover:underline">SaaS Unit Economics Explained: CAC, LTV, ARPU, and Gross Margin</a>.</div>
+
 <figure class="wp-block-table is-style-stripes">
 <table class="has-fixed-layout">
 <thead>

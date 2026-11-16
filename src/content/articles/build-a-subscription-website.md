@@ -27,3 +27,5 @@ faqs: [{"question":"Q. How do I build a subscription website?","answer":"Ans. To
 <h2 class="wp-block-heading" id="conclusion-build-for-ongoing-value-not-just-recurring-payments">Conclusion: Build for Ongoing Value, Not Just Recurring Payments</h2>
 
 <p class="wp-block-paragraph">The best subscription websites are not simply websites with a monthly checkout button. They are systems designed around an ongoing customer need. Start by validating the problem, define a clear recurring value proposition, keep the first version focused, make billing and access reliable, and build retention into the experience from day one.</p>
+
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Financial Sustainability:</strong> Acquiring members is only profitable if customer lifetime value comfortably outpaces acquisition costs. Learn how to calculate CAC, LTV, ARPU, and payback in our comprehensive guide on <a href="/blog/saas-unit-economics" class="text-blue-600 font-medium hover:underline">SaaS Unit Economics Explained: CAC, LTV, ARPU, and Gross Margin</a>.</div>

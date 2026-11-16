@@ -1,5 +1,56 @@
 [
   {
+    "slug": "saas-unit-economics",
+    "title": "SaaS Unit Economics Explained: CAC, LTV, ARPU, and Gross Margin",
+    "description": "Learn SaaS unit economics with practical CAC, LTV, ARPU, and gross margin formulas. Calculate LTV:CAC, payback period, and customer profitability.",
+    "publishedAt": "2026-11-16T12:00:00+00:00",
+    "updatedAt": "2026-11-16T12:00:00+00:00",
+    "category": "Business & Strategy",
+    "tags": [
+      "Business & Strategy",
+      "SaaS",
+      "Unit Economics",
+      "Web Architecture"
+    ],
+    "featuredImage": "/images/articles/saas-unit-economics/featured.webp",
+    "readingTime": "12 min read",
+    "wordCount": 2420,
+    "faqs": [
+      {
+        "question": "What are unit economics in SaaS?",
+        "answer": "SaaS unit economics measure the direct revenue, service delivery costs, and acquisition investment associated with a defined unit of business—typically one customer account. They evaluate whether customer relationships generate sufficient gross profit to justify the cost of winning and serving them."
+      },
+      {
+        "question": "What is the formula for SaaS CAC?",
+        "answer": "Customer Acquisition Cost (CAC) is calculated by dividing total sales and marketing acquisition expenditures by the number of new paying customers acquired during that same time period (CAC = Total Acquisition Spend ÷ New Customers Acquired)."
+      },
+      {
+        "question": "How do you calculate SaaS LTV?",
+        "answer": "In a subscription model, gross-margin-adjusted LTV is calculated as: LTV = (Monthly ARPU × Gross Margin %) ÷ Monthly Customer Churn Rate (expressed as a decimal). Using gross margin rather than top-line revenue is essential to account for the direct cost of serving the customer."
+      },
+      {
+        "question": "What is the difference between ARPU and ARPA?",
+        "answer": "Average Revenue Per User (ARPU) measures revenue per individual seat or end user. Average Revenue Per Account (ARPA) measures revenue across the entire customer account, which may bundle multiple user seats or organizations."
+      },
+      {
+        "question": "Why is gross margin important for SaaS?",
+        "answer": "Gross margin shows the percentage of revenue remaining after subtracting direct hosting, third-party API, payment processing, and support delivery costs. It defines how many cents of every dollar remain to fund customer acquisition, product engineering, and operating profit."
+      },
+      {
+        "question": "What is a good LTV:CAC ratio for SaaS?",
+        "answer": "A 3:1 ratio is widely treated as a standard planning benchmark for mature SaaS companies. Ratios below 1:1 represent destructive economics where customers cost more than they return, while ratios near 1:1 leave inadequate margin for overhead. Very high ratios (above 5:1) often indicate under-investment in addressable market growth."
+      },
+      {
+        "question": "What is CAC payback period?",
+        "answer": "CAC payback period measures the exact number of months of customer gross profit contribution required to recover the initial acquisition cost (CAC Payback = CAC ÷ [Monthly ARPU × Gross Margin %]). It is the primary indicator of cash runway and working capital efficiency."
+      },
+      {
+        "question": "How often should a SaaS company calculate unit economics?",
+        "answer": "Core unit metrics should be tracked monthly to identify trends in acquisition costs or support overhead. However, LTV and retention assumptions should be validated over multi-quarter rolling cohort analyses to ensure underlying churn rates remain stable."
+      }
+    ]
+  },
+  {
     "slug": "core-web-vitals-nextjs-optimization",
     "title": "Core Web Vitals for Next.js: A Practical Optimization Guide",
     "description": "Learn how to improve Core Web Vitals in Next.js with practical fixes for LCP, INP, and CLS, plus measurement tools and a production checklist.",
