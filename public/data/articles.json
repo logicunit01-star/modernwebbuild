@@ -1,5 +1,57 @@
 [
   {
+    "slug": "how-to-calculate-saas-cac",
+    "title": "How to Calculate SaaS Customer Acquisition Cost (CAC): A Practical Guide",
+    "description": "Learn how to calculate SaaS Customer Acquisition Cost (CAC) with practical formulas, fully loaded expense models, cohort attribution, and reduction strategies.",
+    "publishedAt": "2026-11-18T12:00:00+00:00",
+    "updatedAt": "2026-11-18T12:00:00+00:00",
+    "category": "Business & Strategy",
+    "tags": [
+      "Business & Strategy",
+      "SaaS",
+      "CAC",
+      "Unit Economics",
+      "Financial Modeling"
+    ],
+    "featuredImage": "/images/articles/how-to-calculate-saas-cac/featured.webp",
+    "readingTime": "13 min read",
+    "wordCount": 2680,
+    "faqs": [
+      {
+        "question": "What is the formula for SaaS customer acquisition cost?",
+        "answer": "SaaS CAC equals eligible sales and marketing acquisition costs divided by the number of new paying customers acquired during the defined period (CAC = Total S&M Acquisition Costs ÷ New Paying Customers)."
+      },
+      {
+        "question": "Should SaaS CAC include employee salaries?",
+        "answer": "Yes, fully loaded CAC should include relevant sales and marketing salaries, commissions, bonuses, and allocated payroll benefits for SDRs, account executives, and growth marketers."
+      },
+      {
+        "question": "Should free-trial users count as customers?",
+        "answer": "Usually not. Count customers strictly when they convert into paying subscription accounts under your documented definition. Counting free signups or trial leads artificially understates true acquisition cost."
+      },
+      {
+        "question": "What is the difference between blended CAC and channel CAC?",
+        "answer": "Blended CAC combines total acquisition expenditure across all channels divided by total new customers. Channel CAC isolates spend and acquired customers for a specific channel (e.g. Paid Search vs. Organic Inbound), revealing which paths acquire customers efficiently."
+      },
+      {
+        "question": "How often should a SaaS company calculate CAC?",
+        "answer": "Many SaaS companies monitor operational CAC monthly and conduct cohort analysis quarterly. Cohort analysis is particularly vital for mid-market and enterprise businesses where sales cycles exceed 60 to 90 days."
+      },
+      {
+        "question": "Why is my SaaS CAC increasing?",
+        "answer": "Common drivers include rising ad bid costs (CPCs), lower landing page conversion rates, longer sales cycle friction, increased sales team headcount ahead of revenue realization, or an operational shift toward higher-touch enterprise accounts."
+      },
+      {
+        "question": "Is lower CAC always better?",
+        "answer": "No. An acquisition channel with an ultra-low CAC might bring in low-intent users who churn immediately. A higher CAC channel (like enterprise outbound) is often far more profitable if those customers yield high contract values, high retention, and significant expansion revenue."
+      },
+      {
+        "question": "What is the difference between CAC and cost per lead?",
+        "answer": "Cost per lead (CPL) measures marketing spend divided by top-of-funnel lead volume. CAC measures total acquisition investment divided by newly acquired paying customers who have completed a transaction."
+      }
+    ]
+  },
+  {
     "slug": "saas-unit-economics",
     "title": "SaaS Unit Economics Explained: CAC, LTV, ARPU, and Gross Margin",
     "description": "Learn SaaS unit economics with practical CAC, LTV, ARPU, and gross margin formulas. Calculate LTV:CAC, payback period, and customer profitability.",

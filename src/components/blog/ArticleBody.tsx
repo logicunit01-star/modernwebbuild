@@ -1,6 +1,7 @@
 import React from "react";
 import { ArticleFAQ } from "@/types/article";
 import { HelpCircle } from "lucide-react";
+import { SaaSCACCalculator } from "./SaaSCACCalculator";
 
 interface ArticleBodyProps {
   content: string;
@@ -8,13 +9,34 @@ interface ArticleBodyProps {
 }
 
 export function ArticleBody({ content, faqs }: ArticleBodyProps) {
+  const hasCacCalculator = content.includes("<!-- CAC_CALCULATOR -->");
+  const [beforeCalc, afterCalc] = hasCacCalculator
+    ? content.split("<!-- CAC_CALCULATOR -->")
+    : [content, null];
+
   return (
     <div className="article-body">
       {/* Primary HTML Article Body */}
-      <div
-        className="article-prose"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+      {hasCacCalculator ? (
+        <>
+          <div
+            className="article-prose"
+            dangerouslySetInnerHTML={{ __html: beforeCalc }}
+          />
+          <SaaSCACCalculator />
+          {afterCalc && (
+            <div
+              className="article-prose"
+              dangerouslySetInnerHTML={{ __html: afterCalc }}
+            />
+          )}
+        </>
+      ) : (
+        <div
+          className="article-prose"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      )}
 
       {/* Editorial FAQs Section (if present in article metadata) */}
       {faqs && faqs.length > 0 && (

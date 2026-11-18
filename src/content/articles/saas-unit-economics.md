@@ -52,6 +52,8 @@ faqs: [{"question":"What are unit economics in SaaS?","answer":"SaaS unit econom
 
 <h2 class="wp-block-heading" id="customer-acquisition-cost">1. Customer Acquisition Cost (CAC)</h2>
 
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Practical Implementation:</strong> For an exhaustive operational breakdown of fully loaded cost accounting, cohort lag modeling, and an interactive calculator, read our comprehensive guide on <a href="/blog/how-to-calculate-saas-cac" class="text-blue-600 font-medium hover:underline">How to Calculate SaaS Customer Acquisition Cost (CAC): A Practical Guide</a>.</div>
+
 <p class="wp-block-paragraph">Customer Acquisition Cost represents the average capital spent to secure one new paying customer during a specified reporting window. It encompasses the complete sales and marketing infrastructure required to generate demand, nurture leads, and close contracts—not merely direct advertising spend.</p>
 
 <figure class="my-8">
