@@ -23,7 +23,7 @@ faqs: [{"question":"What is the formula for SaaS customer acquisition cost?","an
 <figcaption class="text-xs text-gray-500 text-center mt-2">The architecture of SaaS Customer Acquisition Cost (CAC): dividing sales and marketing investments by new paying subscription accounts.</figcaption>
 </figure>
 
-<div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Strategic Context:</strong> Customer acquisition cost operates in lockstep with Lifetime Value and Gross Margin. Explore our foundational breakdown on <a href="/blog/saas-unit-economics" class="text-blue-600 font-medium hover:underline">SaaS Unit Economics Explained: CAC, LTV, ARPU, and Gross Margin</a>.</div>
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Strategic Context:</strong> Customer acquisition cost operates in lockstep with Lifetime Value and Gross Margin. Explore our foundational breakdown on <a href="/blog/saas-unit-economics" class="text-blue-600 font-medium hover:underline">SaaS Unit Economics Explained</a> and our dedicated guide on <a href="/blog/saas-customer-lifetime-value" class="text-blue-600 font-medium hover:underline">SaaS Customer Lifetime Value (LTV): Formula &amp; Benchmarks</a>.</div>
 
 <h2 class="wp-block-heading" id="what-is-customer-acquisition-cost">What is Customer Acquisition Cost (CAC) in SaaS?</h2>
 

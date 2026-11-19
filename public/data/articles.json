@@ -1,5 +1,57 @@
 [
   {
+    "slug": "saas-customer-lifetime-value",
+    "title": "SaaS Customer Lifetime Value (LTV): Formula, Examples, and Benchmarks",
+    "description": "Learn how to calculate SaaS Customer Lifetime Value (LTV) with practical formulas, gross margin adjustments, churn vs cohort models, and LTV:CAC benchmarks.",
+    "publishedAt": "2026-11-19T12:00:00+00:00",
+    "updatedAt": "2026-11-19T12:00:00+00:00",
+    "category": "Business & Strategy",
+    "tags": [
+      "Business & Strategy",
+      "SaaS",
+      "LTV",
+      "Unit Economics",
+      "Retention"
+    ],
+    "featuredImage": "/images/articles/saas-customer-lifetime-value/featured.webp",
+    "readingTime": "14 min read",
+    "wordCount": 2850,
+    "faqs": [
+      {
+        "question": "What is the SaaS customer lifetime value formula?",
+        "answer": "A standard simplified formula is: Gross-profit LTV = (Average Revenue per Account per period × Gross Margin %) ÷ Customer Churn Rate per period. ARPA and churn must use the exact same time unit (e.g., both monthly)."
+      },
+      {
+        "question": "Should LTV be calculated using revenue or gross profit?",
+        "answer": "For acquisition and capital allocation decisions, gross-profit LTV is mandatory because it accounts for direct costs of serving customers (cloud hosting, APIs, payment processing, and support). Top-line revenue LTV can be tracked separately, but must never be treated as profit available to recover CAC."
+      },
+      {
+        "question": "What is the difference between LTV and CLV?",
+        "answer": "LTV (Lifetime Value), CLV (Customer Lifetime Value), and CLTV are interchangeable acronyms for the same metric. The meaningful distinction lies in whether the metric measures top-line revenue, gross profit, or net contribution margin."
+      },
+      {
+        "question": "How do you calculate average customer lifetime from churn?",
+        "answer": "Under a simplified steady-state population assumption, estimated average customer lifetime equals one divided by the churn rate for that period (Average Lifetime = 1 ÷ Churn Rate). For example, a 2% monthly churn rate implies an expected lifetime of 50 months (1 ÷ 0.02)."
+      },
+      {
+        "question": "What is a good SaaS LTV:CAC ratio?",
+        "answer": "A 3:1 ratio is a widely cited planning rule of thumb, not an immutable universal target. It must be evaluated alongside CAC payback speed, gross margin, customer segment, sales cycle duration, and balance sheet cash reserves."
+      },
+      {
+        "question": "Why should SaaS companies use cohort analysis?",
+        "answer": "Cohort analysis tracks customers acquired in the same calendar window and measures how retention and revenue develop over time. It exposes churn cliffs, seasonal drop-offs, and channel quality variations that a single blended company-wide churn rate conceals."
+      },
+      {
+        "question": "Can LTV increase when churn decreases?",
+        "answer": "Yes. In the simplified churn model, reducing churn increases the expected active customer lifespan and directly increases LTV, assuming ARPA and gross margins remain steady."
+      },
+      {
+        "question": "How often should a SaaS company calculate LTV?",
+        "answer": "Core retention and revenue inputs should be monitored monthly, while comprehensive LTV assumptions and retention curves should be validated via rolling quarterly cohort analysis. Cadence depends on customer volume and sales cycle maturity."
+      }
+    ]
+  },
+  {
     "slug": "how-to-calculate-saas-cac",
     "title": "How to Calculate SaaS Customer Acquisition Cost (CAC): A Practical Guide",
     "description": "Learn how to calculate SaaS Customer Acquisition Cost (CAC) with practical formulas, fully loaded expense models, cohort attribution, and reduction strategies.",

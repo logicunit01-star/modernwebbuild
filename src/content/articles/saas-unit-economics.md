@@ -90,6 +90,8 @@ faqs: [{"question":"What are unit economics in SaaS?","answer":"SaaS unit econom
 
 <h2 class="wp-block-heading" id="customer-lifetime-value">2. Customer Lifetime Value (LTV)</h2>
 
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Advanced Modeling:</strong> For step-by-step mathematical derivations, cohort retention curves, and an interactive calculator, read our deep dive on the <a href="/blog/saas-customer-lifetime-value" class="text-blue-600 font-medium hover:underline">SaaS customer lifetime value formula and cohort analysis</a>.</div>
+
 <p class="wp-block-paragraph">Customer Lifetime Value models the total gross profit contribution an account will generate before terminating the subscription. In software economics, evaluating LTV strictly on top-line revenue is a hazardous mistake; <strong>a gross-margin-adjusted LTV</strong> is mandatory because it accounts for the ongoing cost of delivering the software.</p>
 
 <figure class="my-8">

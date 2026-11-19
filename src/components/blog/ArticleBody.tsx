@@ -2,6 +2,7 @@ import React from "react";
 import { ArticleFAQ } from "@/types/article";
 import { HelpCircle } from "lucide-react";
 import { SaaSCACCalculator } from "./SaaSCACCalculator";
+import { SaaSLTVCalculator } from "./SaaSLTVCalculator";
 
 interface ArticleBodyProps {
   content: string;
@@ -10,33 +11,55 @@ interface ArticleBodyProps {
 
 export function ArticleBody({ content, faqs }: ArticleBodyProps) {
   const hasCacCalculator = content.includes("<!-- CAC_CALCULATOR -->");
-  const [beforeCalc, afterCalc] = hasCacCalculator
-    ? content.split("<!-- CAC_CALCULATOR -->")
-    : [content, null];
+  const hasLtvCalculator = content.includes("<!-- LTV_CALCULATOR -->");
+
+  let bodyContent: React.ReactNode = (
+    <div
+      className="article-prose"
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
+  );
+
+  if (hasCacCalculator) {
+    const [beforeCalc, afterCalc] = content.split("<!-- CAC_CALCULATOR -->");
+    bodyContent = (
+      <>
+        <div
+          className="article-prose"
+          dangerouslySetInnerHTML={{ __html: beforeCalc }}
+        />
+        <SaaSCACCalculator />
+        {afterCalc && (
+          <div
+            className="article-prose"
+            dangerouslySetInnerHTML={{ __html: afterCalc }}
+          />
+        )}
+      </>
+    );
+  } else if (hasLtvCalculator) {
+    const [beforeCalc, afterCalc] = content.split("<!-- LTV_CALCULATOR -->");
+    bodyContent = (
+      <>
+        <div
+          className="article-prose"
+          dangerouslySetInnerHTML={{ __html: beforeCalc }}
+        />
+        <SaaSLTVCalculator />
+        {afterCalc && (
+          <div
+            className="article-prose"
+            dangerouslySetInnerHTML={{ __html: afterCalc }}
+          />
+        )}
+      </>
+    );
+  }
 
   return (
     <div className="article-body">
       {/* Primary HTML Article Body */}
-      {hasCacCalculator ? (
-        <>
-          <div
-            className="article-prose"
-            dangerouslySetInnerHTML={{ __html: beforeCalc }}
-          />
-          <SaaSCACCalculator />
-          {afterCalc && (
-            <div
-              className="article-prose"
-              dangerouslySetInnerHTML={{ __html: afterCalc }}
-            />
-          )}
-        </>
-      ) : (
-        <div
-          className="article-prose"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-      )}
+      {bodyContent}
 
       {/* Editorial FAQs Section (if present in article metadata) */}
       {faqs && faqs.length > 0 && (
