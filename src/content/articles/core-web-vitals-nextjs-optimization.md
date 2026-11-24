@@ -148,6 +148,8 @@ export default function HeroSection() {
 <li><strong>Database Optimization:</strong> Index foreign keys, prune heavy ORM joins, and utilize connection pooling (e.g., Prisma Accelerate or PgBouncer).</li>
 </ul>
 
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-emerald-600 rounded-r-lg text-sm text-slate-700"><strong>Backend Latency & Route Security:</strong> Sluggish backend queries and unthrottled API endpoints directly sabotage TTFB and server availability. To build low-latency, resilient endpoints protected by rate limiting and schema validation, see our in-depth architecture guide on <a href="/blog/secure-nextjs-api-routes" class="text-emerald-700 font-semibold hover:underline">How to Build Secure APIs in Next.js: Authentication, Validation, and Rate Limiting</a>.</div>
+
 <h3 class="wp-block-heading" id="lcp-fix-3-zero-layout-shift-fonts">Fix 3: Load Web Fonts With <code>next/font</code> and Zero Layout Shifts</h3>
 
 <p class="wp-block-paragraph">External font links (such as unoptimized Google Fonts requests) trigger render-blocking network round-trips. Furthermore, when the final font face loads, text layout shifts frequently occur.</p>

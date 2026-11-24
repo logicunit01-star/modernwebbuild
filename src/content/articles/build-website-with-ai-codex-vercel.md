@@ -52,6 +52,8 @@ faqs: [{"question":"Can AI build a website in one day?","answer":"For a simple w
 
 <div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Performance Optimization:</strong> AI code generators often introduce layout shifts and heavy client-rendered component trees. To ensure your deployed application passes Google's 75th-percentile speed thresholds, follow our <a href="/blog/core-web-vitals-nextjs-optimization" class="text-blue-600 font-medium hover:underline">Core Web Vitals for Next.js: Practical Optimization Guide</a>.</div>
 
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-emerald-600 rounded-r-lg text-sm text-slate-700"><strong>API & Endpoint Hardening:</strong> When AI generates route handlers or server actions, it frequently omits parameter validation and rate limiting. Learn how to audit and protect your routes in our complete guide to <a href="/blog/secure-nextjs-api-routes" class="text-emerald-700 font-semibold hover:underline">Building Secure APIs in Next.js: Authentication, Validation, and Rate Limiting</a>.</div>
+
 <p class="wp-block-paragraph">That’s where experienced development becomes valuable.</p>
 
 <p class="wp-block-paragraph"><strong>AI gives you speed. Professional development gives you the technical judgment to turn that speed into a website you can actually launch.</strong></p>

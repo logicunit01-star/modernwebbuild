@@ -3,6 +3,7 @@ import { ArticleFAQ } from "@/types/article";
 import { HelpCircle } from "lucide-react";
 import { SaaSCACCalculator } from "./SaaSCACCalculator";
 import { SaaSLTVCalculator } from "./SaaSLTVCalculator";
+import { NextJSApiSecurityTool } from "./NextJSApiSecurityTool";
 
 interface ArticleBodyProps {
   content: string;
@@ -12,6 +13,7 @@ interface ArticleBodyProps {
 export function ArticleBody({ content, faqs }: ArticleBodyProps) {
   const hasCacCalculator = content.includes("<!-- CAC_CALCULATOR -->");
   const hasLtvCalculator = content.includes("<!-- LTV_CALCULATOR -->");
+  const hasApiSecurityTool = content.includes("<!-- API_SECURITY_TOOL -->");
 
   let bodyContent: React.ReactNode = (
     <div
@@ -50,6 +52,23 @@ export function ArticleBody({ content, faqs }: ArticleBodyProps) {
           <div
             className="article-prose"
             dangerouslySetInnerHTML={{ __html: afterCalc }}
+          />
+        )}
+      </>
+    );
+  } else if (hasApiSecurityTool) {
+    const [beforeTool, afterTool] = content.split("<!-- API_SECURITY_TOOL -->");
+    bodyContent = (
+      <>
+        <div
+          className="article-prose"
+          dangerouslySetInnerHTML={{ __html: beforeTool }}
+        />
+        <NextJSApiSecurityTool />
+        {afterTool && (
+          <div
+            className="article-prose"
+            dangerouslySetInnerHTML={{ __html: afterTool }}
           />
         )}
       </>

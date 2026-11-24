@@ -220,6 +220,8 @@ export async function POST(req: Request) {
 
 <div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Further Reading:</strong> Review our deployment guide on <a href="/blog/build-website-with-ai-codex-vercel" class="text-blue-600 font-medium hover:underline">Developer Guide: Building and Deploying Web Apps with OpenAI Codex, GitHub &amp; Vercel</a>.</div>
 
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-emerald-600 rounded-r-lg text-sm text-slate-700"><strong>Next.js API Security Architecture:</strong> Protecting financial webhooks and payment routes requires robust rate limiting, HMAC timing-safe validation, and schema parsing. Discover the full production blueprint in our guide on <a href="/blog/secure-nextjs-api-routes" class="text-emerald-700 font-semibold hover:underline">How to Build Secure APIs in Next.js: Authentication, Validation, and Rate Limiting</a>.</div>
+
 <h2 class="wp-block-heading" id="testing-and-production-cutover">Testing, Sandbox Validation &amp; Going Live</h2>
 
 <p class="wp-block-paragraph">Before pointing live domain traffic to your payment routes, execute a thorough testing matrix in your provider’s sandbox environment:</p>

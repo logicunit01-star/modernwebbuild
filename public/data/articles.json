@@ -1,5 +1,57 @@
 [
   {
+    "slug": "secure-nextjs-api-routes",
+    "title": "How to Build Secure APIs in Next.js: Authentication, Validation, and Rate Limiting",
+    "description": "Learn how to build secure Next.js API routes with authentication, authorization, Zod validation, rate limiting, and practical TypeScript examples.",
+    "publishedAt": "2026-11-24T12:00:00+00:00",
+    "updatedAt": "2026-11-24T12:00:00+00:00",
+    "category": "Web Architecture",
+    "tags": [
+      "Web Architecture",
+      "Next.js",
+      "API Security",
+      "TypeScript",
+      "Zod"
+    ],
+    "featuredImage": "/images/articles/secure-nextjs-api-routes/featured.webp",
+    "readingTime": "14 min read",
+    "wordCount": 3120,
+    "faqs": [
+      {
+        "question": "Are Next.js API routes secure by default?",
+        "answer": "No. Next.js provides App Router Route Handlers to define HTTP endpoints, but developers must explicitly implement authentication, authorization, runtime schema validation, and rate limiting. Route Handlers are publicly accessible URLs unless guarded by server-side verification."
+      },
+      {
+        "question": "What is the difference between Next.js API Routes and Route Handlers?",
+        "answer": "API Routes belong to the legacy Pages Router (defined in pages/api) and rely on Node.js req/res objects. Route Handlers belong to the modern App Router (defined in app/api/**/route.ts) and use standard Web API Request and Response objects, supporting Edge and Node.js runtimes."
+      },
+      {
+        "question": "Should I use middleware or Route Handlers for authentication?",
+        "answer": "Middleware provides useful preliminary checks such as token inspection or route redirects. However, sensitive data access and mutations must always perform authoritative server-side session and authorization verification inside the Route Handler or data access layer. Never rely solely on middleware."
+      },
+      {
+        "question": "Is Zod necessary for Next.js API validation?",
+        "answer": "Zod is not strictly required, but runtime schema validation is mandatory. TypeScript types only exist at compile time and disappear in production, leaving JSON bodies unvalidated. Zod provides safe runtime parsing, type inference, and stripping of unexpected fields."
+      },
+      {
+        "question": "How do I prevent users from accessing another user's data?",
+        "answer": "Prevent Broken Object Level Authorization (BOLA/IDOR) by always scoping database queries to the authenticated user's session identifier (e.g. where: { id, ownerId: user.id }), rather than querying records by client-supplied IDs alone."
+      },
+      {
+        "question": "How do I implement rate limiting in Next.js?",
+        "answer": "In serverless or distributed deployments, use a centralized low-latency store such as Redis (Upstash) using a sliding-window token bucket algorithm. Reject abusive traffic by returning an HTTP 429 status code with a Retry-After header."
+      },
+      {
+        "question": "Can I use Next.js as a backend for a mobile app?",
+        "answer": "Yes. Next.js App Router Route Handlers expose standard HTTP REST endpoints that can be consumed by web, iOS, and Android clients. Mobile integrations require token-based authentication (JWT or OAuth bearer tokens), strict input validation, and API versioning."
+      },
+      {
+        "question": "Should I build my own authentication system?",
+        "answer": "For almost all production applications, use an established, audited authentication library (such as Auth.js, NextAuth, Clerk, WorkOS, or Supabase Auth) rather than hashing passwords and managing session tokens manually. This significantly reduces security vulnerability surface area."
+      }
+    ]
+  },
+  {
     "slug": "saas-customer-lifetime-value",
     "title": "SaaS Customer Lifetime Value (LTV): Formula, Examples, and Benchmarks",
     "description": "Learn how to calculate SaaS Customer Lifetime Value (LTV) with practical formulas, gross margin adjustments, churn vs cohort models, and LTV:CAC benchmarks.",
