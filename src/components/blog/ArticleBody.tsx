@@ -4,6 +4,7 @@ import { HelpCircle } from "lucide-react";
 import { SaaSCACCalculator } from "./SaaSCACCalculator";
 import { SaaSLTVCalculator } from "./SaaSLTVCalculator";
 import { NextJSApiSecurityTool } from "./NextJSApiSecurityTool";
+import { NextJSComponentArchitectTool } from "./NextJSComponentArchitectTool";
 
 interface ArticleBodyProps {
   content: string;
@@ -14,6 +15,7 @@ export function ArticleBody({ content, faqs }: ArticleBodyProps) {
   const hasCacCalculator = content.includes("<!-- CAC_CALCULATOR -->");
   const hasLtvCalculator = content.includes("<!-- LTV_CALCULATOR -->");
   const hasApiSecurityTool = content.includes("<!-- API_SECURITY_TOOL -->");
+  const hasRscTool = content.includes("<!-- RSC_ARCHITECT_TOOL -->");
 
   let bodyContent: React.ReactNode = (
     <div
@@ -65,6 +67,23 @@ export function ArticleBody({ content, faqs }: ArticleBodyProps) {
           dangerouslySetInnerHTML={{ __html: beforeTool }}
         />
         <NextJSApiSecurityTool />
+        {afterTool && (
+          <div
+            className="article-prose"
+            dangerouslySetInnerHTML={{ __html: afterTool }}
+          />
+        )}
+      </>
+    );
+  } else if (hasRscTool) {
+    const [beforeTool, afterTool] = content.split("<!-- RSC_ARCHITECT_TOOL -->");
+    bodyContent = (
+      <>
+        <div
+          className="article-prose"
+          dangerouslySetInnerHTML={{ __html: beforeTool }}
+        />
+        <NextJSComponentArchitectTool />
         {afterTool && (
           <div
             className="article-prose"

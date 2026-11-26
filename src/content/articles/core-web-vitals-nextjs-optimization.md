@@ -210,6 +210,8 @@ export function SearchTrigger() {
   );
 }</code></pre>
 
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Deep Dive on Component Architecture:</strong> Deciding whether a component should execute on the server or the client is crucial for protecting INP. Learn practical composition patterns and slot architecture in our guide on <a href="/blog/react-server-vs-client-components" class="text-blue-600 font-medium hover:underline">React Server Components vs Client Components in Next.js: When to Use Each</a>.</div>
+
 <h3 class="wp-block-heading" id="inp-fix-2-dynamic-code-splitting">Fix 2: Defer Heavy Interactive Widgets Using <code>next/dynamic</code></h3>
 
 <p class="wp-block-paragraph">Interactive charts, rich-text markdown editors, data tables, and modal dialogs add substantial parsing and compilation overhead to the main thread. Defer them until required using dynamic imports:</p>

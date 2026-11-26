@@ -118,6 +118,8 @@ export async function POST(request: Request) {
   return NextResponse.json({ received: true, body }, { status: 201 });
 }</code></pre>
 
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Server vs. Client Architecture:</strong> When data fetching happens on the server, you often don't even need a public API route. To understand when to query directly from Server Components vs exposing API endpoints, see our guide on <a href="/blog/react-server-vs-client-components" class="text-blue-600 font-medium hover:underline">React Server Components vs Client Components in Next.js: When to Use Each</a>.</div>
+
 <p class="wp-block-paragraph"><strong>The Security Implication:</strong> Every Route Handler is a public HTTP endpoint. Merely deploying an app using Next.js provides zero automatic API security. You must deliberately implement security guards in the handler execution path.</p>
 
 <h2 class="wp-block-heading" id="implement-authentication">2. Implement Authentication Before Accessing Protected Data</h2>

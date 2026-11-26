@@ -20,6 +20,8 @@ faqs: [{"question":"Can I keep using WordPress as my CMS after converting to Rea
 
 <p class="wp-block-paragraph">This guide walks you through every step — architecture decisions, API setup, costs, and the critical mistakes that sink most migrations. </p>
 
+<div class="my-6 p-4 bg-slate-50 border-l-4 border-blue-600 rounded-r-lg text-sm text-slate-700"><strong>Next.js Component Architecture:</strong> Migrating to React and Next.js requires understanding how to balance server rendering with client interactivity. Learn when to use Server Components versus Client Components in our practical guide on <a href="/blog/react-server-vs-client-components" class="text-blue-600 font-medium hover:underline">Server vs Client Components in Next.js: When to Use Each</a>.</div>
+
 <p class="wp-block-paragraph">To learn about <strong><a href="/blog/migrate-from-wordpress-to-headless-cms">WordPress headless migration</a></strong> &amp; <strong><a href="/blog/headless-cms-vs-wordpress">Traditional WordPress vs headless</a></strong>, Click Here!</p>
 
 </div>
